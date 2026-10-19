@@ -23,8 +23,11 @@
 
 ![Streamlit UI: a task goes in, the agent returns passing code and a per-iteration history](docs/test_1.png)
 
+The screenshot is a one-shot pass. Most tasks are. When the first draft fails, the loop looks like this
+(a real run, benchmark task `search_10`, see [case study 4](results/case_studies/task_4_test_repair_works.md)):
+
 ```
-"Sort dicts by age"  →  generate  →  test  →  ❌ FAIL (None values)  →  analyse  →  fix  →  test  →  ✅ PASS
+generate → test ❌ FAIL → fix → test ❌ FAIL (same test) → suspect the test, repair it → test ✅ PASS   (3 iterations)
 ```
 
 ## 💡 Why this exists
