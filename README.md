@@ -199,6 +199,9 @@ docker run --rm -p 127.0.0.1:8000:8000 -e GEMINI_API_KEY=your_key \
   --read-only --tmpfs /tmp --tmpfs /app/results/logs:uid=10001 --cap-drop ALL code-agent
 ```
 
+On Windows, run this from PowerShell. In Git Bash, prefix it with `MSYS_NO_PATHCONV=1`, or `/tmp` is rewritten
+into a Windows path and Docker rejects the mount.
+
 Keep both services bound to localhost: every request spends LLM quota and executes generated code. If you expose
 the API, set `API_TOKEN` and restrict egress to the Gemini host.
 
