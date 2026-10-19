@@ -7,6 +7,8 @@ failure, and rewrites the code until the tests pass.
 "Sort dicts by age" -> generate -> test -> FAIL (None values) -> analyse -> fix -> test -> PASS
 ```
 
+![Streamlit UI: a task goes in, the agent returns passing code and a per-iteration history](docs/ui-screenshot.jpg)
+
 Most code generators stop after the first draft and hope it works. This one checks its output and repairs it.
 It also ships with a benchmark that measures how often that checking can be trusted, which turned out to be the
 more interesting question.
