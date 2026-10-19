@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+results/logs/*.log
+results/logs/llm_usage.json
+.ipynb_checkpoints/
+.claude/
+PROJECT_2_CLAUDE.md

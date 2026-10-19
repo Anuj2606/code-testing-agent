@@ -1,0 +1,11 @@
+.env
+.git
+.claude
+__pycache__
+*.pyc
+.pytest_cache
+notebooks
+results
+tests
+ui
+PROJECT_2_CLAUDE.md

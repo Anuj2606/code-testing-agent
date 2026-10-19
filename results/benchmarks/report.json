@@ -1,0 +1,56 @@
+{
+  "total_tasks": 52,
+  "success_rate": 1.0,
+  "clean_success_rate": 1.0,
+  "hardcoded_tasks": [],
+  "verified_rate": 0.9808,
+  "first_try_rate": 0.9038,
+  "self_fix_rate": 1.0,
+  "self_fix_counts": [
+    5,
+    5
+  ],
+  "self_fix_95ci": [
+    0.566,
+    1.0
+  ],
+  "first_try_95ci": [
+    0.794,
+    0.958
+  ],
+  "iterations": {
+    "avg_iterations": 1.15,
+    "median": 1.0,
+    "max": 3,
+    "min": 1
+  },
+  "avg_seconds": 28.9,
+  "failure_modes": {},
+  "by_category": {
+    "api_calls": {
+      "tasks": 10,
+      "success_rate": 1.0,
+      "verified_rate": 1.0
+    },
+    "data_processing": {
+      "tasks": 12,
+      "success_rate": 1.0,
+      "verified_rate": 1.0
+    },
+    "searching": {
+      "tasks": 10,
+      "success_rate": 1.0,
+      "verified_rate": 1.0
+    },
+    "sorting": {
+      "tasks": 10,
+      "success_rate": 1.0,
+      "verified_rate": 1.0
+    },
+    "string_manipulation": {
+      "tasks": 10,
+      "success_rate": 1.0,
+      "verified_rate": 0.9
+    }
+  }
+}

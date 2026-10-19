@@ -1,0 +1,20 @@
+gemini_config:
+  model: "gemini-3.8-flash"
+  temperature: 0.7
+  max_tokens: 8192
+llm_config:
+  provider: "gemini"          # hybrid | gemini | ollama  (ollama is parked: no model pulled)
+  gemini_roles: ["fix"]       # steps sent to Gemini first in hybrid mode
+  # Free-tier quotas are per project AND per model. Ordered pool: first model with budget left is used.
+  # Verified working on this key (scripts/probe_models.py); 2.5-* models return 404 (retired).
+  gemini_models: ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
+  ollama_url: "http://localhost:11434"
+  ollama_model: "qwen2.5-coder:7b"
+  ollama_timeout: 300
+agent_config:
+  max_iterations: 5
+  timeout_per_iteration: 30
+  enable_memory: true
+tools_config:
+  sandbox_timeout: 10
+  restricted_imports: ["os", "sys", "subprocess", "socket", "shutil"]
