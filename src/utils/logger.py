@@ -10,8 +10,13 @@ def get_logger(name: str = "agent") -> logging.Logger:
         return logger
     logger.setLevel(logging.INFO)
     fmt = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
-    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
-    for handler in (logging.StreamHandler(), logging.FileHandler(LOG_FILE, encoding="utf-8")):
+    handlers = [logging.StreamHandler()]
+    try:
+        LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+        handlers.append(logging.FileHandler(LOG_FILE, encoding="utf-8"))
+    except OSError:  # read-only or unwritable log dir (e.g. hardened container): console only
+        pass
+    for handler in handlers:
         handler.setFormatter(fmt)
         logger.addHandler(handler)
     return logger

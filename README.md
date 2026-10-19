@@ -214,12 +214,12 @@ The API has per-IP rate limiting (30 requests a minute by default, `RATE_LIMIT_P
 authentication via `API_TOKEN`. Run history is held in memory, and agent runs are serialised with a lock because
 the agent keeps module-level state.
 
-**Docker (API only, not yet built or tested):**
+**Docker (API only; built and smoke-tested, 282 MB image):**
 
 ```bash
 docker build -t code-agent .
 docker run --rm -p 127.0.0.1:8000:8000 -e GEMINI_API_KEY=your_key \
-  --read-only --tmpfs /tmp --tmpfs /app/results/logs --cap-drop ALL code-agent
+  --read-only --tmpfs /tmp --tmpfs /app/results/logs:uid=10001 --cap-drop ALL code-agent
 ```
 
 The container is an extra isolation layer around the subprocess sandbox. It still needs outbound access to the

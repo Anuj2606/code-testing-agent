@@ -13,7 +13,7 @@ COPY src ./src
 COPY api ./api
 
 # Run as an unprivileged user; results/logs must be writable for the router's usage file.
-RUN useradd --create-home app && mkdir -p results/logs && chown -R app /app/results
+RUN useradd --uid 10001 --create-home app && mkdir -p results/logs && chown -R app /app/results
 USER app
 
 EXPOSE 8000

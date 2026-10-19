@@ -46,8 +46,11 @@ def _usage() -> dict:
 
 
 def _save(u: dict) -> None:
-    _USAGE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    _USAGE_FILE.write_text(json.dumps(u, indent=1))
+    try:
+        _USAGE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        _USAGE_FILE.write_text(json.dumps(u, indent=1))
+    except OSError:  # unwritable log dir: usage is simply not persisted across restarts
+        pass
 
 
 def _record(provider_model: str) -> None:
