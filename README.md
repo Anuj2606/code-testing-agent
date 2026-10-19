@@ -21,15 +21,7 @@
 
 ## 👀 Demo
 
-![Streamlit UI: a task goes in, the agent returns passing code and a per-iteration history](docs/ui-screenshot.jpg)
-
-<!--
-  ADD YOUR SCREENSHOT HERE (one image, e.g. the benchmark plot or a failing-then-fixed run):
-  1. Save it as docs/screenshot-2.png
-  2. Delete this comment and uncomment the line below
-
-  ![Describe the screenshot](docs/screenshot-2.png)
--->
+![Streamlit UI: a task goes in, the agent returns passing code and a per-iteration history](docs/test_1.png)
 
 ```
 "Sort dicts by age"  →  generate  →  test  →  ❌ FAIL (None values)  →  analyse  →  fix  →  test  →  ✅ PASS
